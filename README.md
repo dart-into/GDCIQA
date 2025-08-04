@@ -22,23 +22,25 @@ Code for GDCIQA
 - need to updown the weights of ViT, and name is with "pytorch_model.bin".
 ## Usages
 
-### Screen source domain images for the target domain
+### Swin Transformer Parameters
 ```
-similar_livec_kadid.py
+"swin_base_patch4_window7_224.pth" parameters are required from the open source official website of Pytorch.
 ```
 
-You will get screened source domain datasets, and these datasets are inputs of the model.
+####  Distortion Classification Model Pretrained Parameters
 ```
-image_labeled_by_score.csv
+Train on KADID for "KADID10K_train_dis.pt".
 ```
-The cluster number of the source domain is dynamic with the scale of the source domain.
 
-####  Q1  When deal with the target domain
+####  IQA Model Pretrained Parameters
 ```
-domain_kadid_part_to_livec.py
+Train on KADID for "KADID10K_train_IQA.pt".
 ```
-Then a quality model will be trained for the target domain.
 
+####  Co-adaptation Learning and Test on LIVE-C
+```
+Run "domain_kadid_to_livec".
+```
 
 Some available options:
 * `--lr`: Learning rate.
